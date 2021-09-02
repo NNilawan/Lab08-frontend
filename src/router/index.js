@@ -11,6 +11,7 @@ import NProgress from 'nprogress'
 import EventService from '@/services/EventService.js'
 import GStore from '@/store'
 import AddEvent from '@/views/EventForm.vue'
+import AddOrganization from '@/views/OrganizationForm.vue'
 
 const routes = [{
         path: '/',
@@ -27,6 +28,11 @@ const routes = [{
         path: '/add-event',
         name: 'AddEvent',
         component: AddEvent
+    },
+    {
+        path: '/add-organization',
+        name: 'AddOrganization',
+        component: AddOrganization
     },
     {
         path: '/event/:id',
