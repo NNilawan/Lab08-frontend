@@ -47,6 +47,7 @@
 import EventService from '@/services/EventService.js'
 
 export default {
+    inject: ['GStore'],
   data() {
     return {
       event: {
@@ -66,6 +67,10 @@ export default {
             name: 'EventLayout',
             params: { id: response.data.id }
           })
+          this.GStore.flashMessage = 'You are successfully add a new event for ' + response.data.title
+          setTimeout(() => {
+              this.GStore.flashMessage = ''
+        }, 3000)
         })
         .catch(() => {
           this.$router.push('NetworkError')
